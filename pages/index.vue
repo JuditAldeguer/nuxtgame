@@ -1,7 +1,7 @@
 <template>
-<div class="flex bg-red-400 intem-center justify-center h-screen flex-col relative">
-  <div class="tablero grid grid-cols-3">
-    <div v-for="(item, i) in 9" :key="i" class="bg-black p-4 text-white h-[10px]">0</div>
+<div class="flex items-center justify-center h-screen relative">
+  <div class="grid grid-cols-3 w-[300px] h-[300px] gap-3">
+    <div v-for="(item, i) in 9" :key="i" class="bg-black p-4  bg-gray-200 flex items-center justify-center"></div>
   </div>
 </div>
 </template>
