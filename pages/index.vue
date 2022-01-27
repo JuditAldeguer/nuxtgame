@@ -1,5 +1,6 @@
 <template>
   <div class="flex items-center justify-center h-screen relative">
+    <div class="absolute top-0 left-0 text-3xl">El ganador es: {{game.winner}}</div>
     <div class="grid grid-cols-3 w-[300px] h-[300px] gap-3">
       <div
         v-for="({ icon }, i) in configuration.grid"
@@ -61,8 +62,8 @@ export default {
         })
       }
       if(this.winner(this.configuration.grid)){
-        this.game.winner = this.winner(this.configuration.grid);
-        console.log(this.game.winner);
+        const {element} = this.winner(this.configuration.grid);
+        this.game.winner = element;
       }
     },
   },
