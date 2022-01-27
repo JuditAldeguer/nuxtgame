@@ -16,10 +16,12 @@
 </template>
 
 <script>
+import {winner} from "@/util/game";
 export default {
   name: 'IndexPage',
   data() {
     return {
+      winner,
       configuration: {
         grid: [
           { icon: '', element: '' },
@@ -57,6 +59,10 @@ export default {
           icon: this.configuration.elements['0'],
           element: '0',
         })
+      }
+      if(this.winner(this.configuration.grid)){
+        this.game.winner = this.winner(this.configuration.grid);
+        console.log(this.game.winner);
       }
     },
   },
